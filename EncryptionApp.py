@@ -9,6 +9,7 @@ from Crypto.PublicKey import RSA
 from Crypto.Random import get_random_bytes
 
 class EncryptionApp:
+    # tkinter ui setup
     def __init__(self, master):
         self.master = master
         master.title("Encryption/Decryption Tool")
@@ -70,7 +71,9 @@ class EncryptionApp:
         cipher = AES.new(key, AES.MODE_EAX)
         ciphertext, tag = cipher.encrypt_and_digest(text)
 
+        # base64 encodes the complete encrypted message
         encrypted = base64.b64encode(cipher.nonce + tag + ciphertext).decode()
+        
         self.aes_result.delete("1.0", "end")
         self.aes_result.insert("1.0", encrypted)
 
@@ -83,9 +86,13 @@ class EncryptionApp:
             return
 
         encrypted = base64.b64decode(encrypted)
+        
+        # extrac components: nonce (first 16 bytes), tag (next 16 bytes), and ciphertext (remaining bytes)
         nonce, tag, ciphertext = encrypted[:16], encrypted[16:32], encrypted[32:]
 
+        # recreates the AES cipher object using the provided key and nonce for decryption
         cipher = AES.new(key, AES.MODE_EAX, nonce)
+        
         try:
             decrypted = cipher.decrypt_and_verify(ciphertext, tag)
             self.aes_result.delete("1.0", "end")
@@ -104,11 +111,18 @@ class EncryptionApp:
             messagebox.showerror("Failed", "Please generate RSA keys first")
             return
 
+        # get the text from the RSA input text box and encode it to bytes
         text = self.rsa_text.get("1.0", "end-1c").encode()
+        
+        # makes a new PKCS1_OAEP cipher object using the public key for encryption
         cipher = PKCS1_OAEP.new(self.public_key)
+        
+        # encrypt the text using the cipher object
         encrypted = cipher.encrypt(text)
 
+        # encodes the encrypted bytes to a base64 string for display
         encrypted_b64 = base64.b64encode(encrypted).decode()
+        
         self.rsa_result.delete("1.0", "end")
         self.rsa_result.insert("1.0", encrypted_b64)
 
@@ -121,13 +135,27 @@ class EncryptionApp:
         encrypted = base64.b64decode(encrypted_b64)
 
         cipher = PKCS1_OAEP.new(self.private_key)
+        
+        # gets the encrypted text from the RSA input text box
+        encrypted_b64 = self.rsa_text.get("1.0", "end-1c")
+        
+         # Decode the base64-encoded encrypted message back into bytes
+        encrypted = base64.b64decode(encrypted_b64)
+        
+        # Create a new PKCS1_OAEP cipher object using the private key for decryption
+        cipher = PKCS1_OAEP.new(self.private_key)  
+        
         try:
             decrypted = cipher.decrypt(encrypted)
             self.rsa_result.delete("1.0", "end")
             self.rsa_result.insert("1.0", decrypted.decode())
         except ValueError:
             messagebox.showerror("Failed", "Decryption failed. Invalid key or corrupted message.")
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 8c98a26 (Added comments to EncryptionApp.py)
 root = tk.Tk()
 app = EncryptionApp(root)
 root.mainloop()
