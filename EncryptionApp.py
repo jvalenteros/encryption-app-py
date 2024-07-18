@@ -151,11 +151,7 @@ class EncryptionApp:
             self.rsa_result.insert("1.0", decrypted.decode())
         except ValueError:
             messagebox.showerror("Failed", "Decryption failed. Invalid key or corrupted message.")
-<<<<<<< HEAD
         
-=======
-
->>>>>>> 8c98a26 (Added comments to EncryptionApp.py)
 root = tk.Tk()
 app = EncryptionApp(root)
 root.mainloop()
