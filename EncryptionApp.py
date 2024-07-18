@@ -8,7 +8,6 @@ from Crypto.Cipher import AES, PKCS1_OAEP
 from Crypto.PublicKey import RSA
 from Crypto.Random import get_random_bytes
 
-
 class EncryptionApp:
     def __init__(self, master):
         self.master = master
@@ -128,7 +127,6 @@ class EncryptionApp:
             self.rsa_result.insert("1.0", decrypted.decode())
         except ValueError:
             messagebox.showerror("Failed", "Decryption failed. Invalid key or corrupted message.")
-
         
 root = tk.Tk()
 app = EncryptionApp(root)
