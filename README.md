@@ -17,11 +17,11 @@ A simple Python GUI application for encrypting and decrypting text using AES and
 
 1. Clone this repository:
    ```
-   git clone https://github.com/YOUR_USERNAME/encryption_decryption_tool.git
+   git clone https://github.com/jvalenteros/encryption-app-py.git
    ```
 2. Navigate to the project directory:
    ```
-   cd encryption_decryption_tool
+   cd encryption-app-py
    ```
 3. Install the required dependencies:
    ```
@@ -52,7 +52,7 @@ python EncryptionApp.py
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/YOUR_USERNAME/encryption_decryption_tool/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/jvalenteros/encryption-app-py/issues).
 
 ## License
 
@@ -62,7 +62,7 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
 **Johann Valenteros**
 
-- Github: [@jvalenteros](https://github.com/YOUR_USERNAME)
+- Github: [@jvalenteros](https://github.com/jvalenteros)
 
 ## Support
 
