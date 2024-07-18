@@ -9,7 +9,7 @@ A simple Python GUI application for encrypting and decrypting text using AES and
 
 - 🔒 AES Encryption & Decryption
 - 🗝️ RSA Encryption & Decryption
-- 🖥️ User-friendly GUI
+- 🖥️ Simple GUI
 - 🚀 Fast and efficient
 - 🔧 Easy to use
 
