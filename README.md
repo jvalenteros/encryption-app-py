@@ -3,15 +3,15 @@
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-A simple Python GUI application for encrypting and decrypting text using AES and RSA algorithms.
+A simple Python GUI application developed in parallel with my COMPSCI 2250 DSA course for encrypting and decrypting text using AES and RSA algorithms, made with TKInter.
 
 ## Features
 
-- 🔒 AES Encryption & Decryption
-- 🗝️ RSA Encryption & Decryption
-- 🖥️ Simple GUI
-- 🚀 Fast and efficient
-- 🔧 Easy to use
+- AES Encryption & Decryption
+- RSA Encryption & Decryption
+- Simple GUI
+- Fast and efficient
+- Easy to use
 
 ## Installation
 
@@ -63,10 +63,6 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 **Johann Valenteros**
 
 - Github: [@jvalenteros](https://github.com/jvalenteros)
-
-## Support
-
-Give a ⭐️ if this project helped you!
 
 ## Disclaimer
 
